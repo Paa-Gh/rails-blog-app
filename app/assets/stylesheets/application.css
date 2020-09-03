@@ -34,7 +34,7 @@
 
  .navbar {
   min-height: 150px;
-  background-image: url(blog-banner.png);
+  background-image: url(/assets/blog-banner.png);
   top: 0;
   margin-bottom: 0;
   font-family: "Raleway", sans-serif;
@@ -73,7 +73,7 @@
  }
 
  footer {
-   background-image: url(blog-banner.png);
+   background-image: url(/assets/blog-banner.png);
    background-color: #ebebeb;
    padding: 30px 0;
  }
