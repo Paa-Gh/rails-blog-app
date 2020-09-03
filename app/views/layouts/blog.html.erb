@@ -20,8 +20,9 @@
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
-<body>
+<body id="page-container">
 
+<div id="content">
 <!-- Navbar -->
 <%= render 'layouts/navbar' %>
 
@@ -41,9 +42,12 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <!-- END w3-content -->
 </div>
+</div>
 
 <!-- Footer -->
+<div id="footer">
 <%= render 'layouts/footer' %>
+</div>
 
 </body>
 
