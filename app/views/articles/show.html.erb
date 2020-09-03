@@ -1,0 +1,52 @@
+<div class="w3-row d-flex justify-content-center">
+  <div class="w3-col l10 s8">
+    <p class="title m40 text-uppercase">
+      <%= @article.title %>
+    </p>
+
+    <p class="m40 d-flex w3-card justify-content-center">
+      <%= image_tag @article.image %>
+    </p>
+
+    <p class="textarea m40 fs16 w3-card bg-white p-5">
+      <%= @article.description %>
+    </p>
+
+    <div class="m40 w3-container">
+      <div class="row d-flex">
+        <p class="mr-5 fs14">
+          <strong>Category:</strong>
+          <%= @article.category.name %>
+        </p>
+
+        <p class="fs14 ml-auto">
+          <strong>Posted:</strong>
+          <%= @article.created_at %>
+        </p>
+      </div>
+    </div>
+
+    <% if @article.user == current_user %>
+      <%= link_to 'Edit', edit_article_path(@article), class:"btn btn-warning btn-lg mr-4 m40" %>
+    <% end %>
+
+    <div class="mb-5 w3-card w3-padding">
+      <h1 class="mb-3" >Comments</h1>
+      <ul class="container mb-5">
+        <%= render 'comments/list', comment: @comment %>
+      </ul>
+
+      <% if user_signed_in? %>
+      <div>
+      <%= render 'comments/form', comment: @comment %>
+      </div>
+      <% end %>
+
+    </div>
+
+    <div class="m40">
+    <%= link_to 'Back', articles_path, class:"btn btn-primary btn-lg" %>
+    </div>
+
+  </div>
+</div>

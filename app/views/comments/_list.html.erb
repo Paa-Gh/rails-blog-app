@@ -1,0 +1,14 @@
+<% @article.comments.find_each do |comment| %>
+  <li class="listcomm row d-inline mb-1">
+    <div class="w3-col l1 s1 mr-auto">
+        <%= image_tag comment.user.gravatar_url, :class => "grav" %>
+    </div>
+    <div class="w3-col l9 s7 mx-4 f14">
+        <%= comment.content %>
+    </div>
+    <div class="mb--2">
+    <%= comment.created_at.to_formatted_s(:short) %>
+    </div>
+  </li>
+
+<% end %>
